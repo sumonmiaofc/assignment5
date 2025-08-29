@@ -21,12 +21,28 @@ querySelectorAll: CSS selector ব্যবহার করে সব matching e
 </ul>
 
 
-<h4>What is Event Bubbling and how does it work?</h4>
+<h4>3. What is Event Bubbling and how does it work?</h4>
 <ul>
   <li> একটি child element (যেমন button) এ event trigger হলে প্রথমে child element এ event চলে।</li>
 
 <li> এরপর event bubble হয়ে parent element, grandparent element এবং শেষ পর্যন্ত document এ পৌঁছায়।</li>
 </ul>
+
+<h4>4. What is Event Delegation in JavaScript? Why is it useful?</h4>
+<ul>
+  <li> Event Delegation হলো একটি পদ্ধতি যেখানে child element এ আলাদা listener না দিয়ে parent element এ listener বসানো হয়। Event bubbling ব্যবহার করে নির্দিষ্ট child element শনাক্ত করা হয়।</li>
+
+<li>এটা ইউজফুল কারন কোড সহজ হয়, পারফরম্যান্স ভালো থাকে, এবং dynamic element গুলো handle করা যায়।</li>
+</ul>
+
+<h4>5. What is the difference between preventDefault() and stopPropagation() methods?
+</h4>
+<ul>
+  <li> event.preventDefault(): ব্রাউজারের ডিফল্ট আচরণ বন্ধ করে। উদাহরণ: Form submit হলে পেজ reload হওয়া বন্ধ করা।</li>
+
+<li>event.stopPropagation(): Event bubbling বন্ধ করে। Parent element এ event পৌঁছায় না।</li>
+</ul>
+
 
 
 

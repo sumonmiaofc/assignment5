@@ -1,56 +1,97 @@
-<script>
-  // Initial count
-  let clickCounter = 0;
-  let copyCount = 2;
+// Initial counts
+let clickCounter = 0;
+let copyCount = 2;
 
-  // Heart icons
-  const hearts = document.querySelectorAll('[id$="-heart"]');
-  const clickCounterSpan = document.getElementById('click-counter');
+// Update click counter
+const clickCounterSpan = document.getElementById("click-counter");
 
-  hearts.forEach(heart => {
-    heart.addEventListener('click', () => {
-      clickCounter++;
-      clickCounterSpan.textContent = clickCounter;
-      heart.innerHTML = '<i class="fa-solid fa-heart text-red-500"></i>';
-    });
+// Heart icons
+const hearts = [
+  "national-heart",
+  "police-heart",
+  "fire-heart",
+  "ambulance-heart",
+  "Women-child-heart",
+  "helpline-heart",
+  "electricity-heart",
+  "brac-heart",
+  "railway-heart",
+];
+
+hearts.forEach((id) => {
+  const heart = document.getElementById(id);
+  heart.addEventListener("click", () => {
+    clickCounter++;
+    clickCounterSpan.textContent = clickCounter;
+    heart.innerHTML = '<i class="fa-solid fa-heart text-red-500"></i>';
   });
+});
 
-  // Copy buttons
-  const copyButtons = document.querySelectorAll('[id$="-copy-icon"], [id$="-copy"]');
-  const copyCountSpan = document.getElementById('Copy-count');
+// Copy buttons
+const copyButtons = [
+  "national-copy-icon",
+  "police-copy-icon",
+  "fire-copy-icon",
+  "ambulance-copy-icon",
+  "Women-child-copy",
+  "helpline-copy-icon",
+  "electricity-copy-icon",
+  "brac-copy-icon",
+  "railway-copy-icon",
+];
+const copyCountSpan = document.getElementById("Copy-count");
 
-  copyButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const numberId = btn.id.replace('-copy-icon', '-service-num').replace('-copy', '-num');
-      const numberText = document.getElementById(numberId)?.textContent || '';
-      navigator.clipboard.writeText(numberText);
+copyButtons.forEach((id) => {
+  const btn = document.getElementById(id);
+  btn.addEventListener("click", () => {
+    let numId = id
+      .replace("-copy-icon", "-service-num")
+      .replace("-copy", "-num");
+    const numElem = document.getElementById(numId);
+    const numberText = numElem ? numElem.textContent : "";
 
-      copyCount++;
-      copyCountSpan.textContent = copyCount;
-      alert(numberText + ' copied to clipboard');
-    });
+    // Copy to clipboard
+    navigator.clipboard.writeText(numberText);
+
+    // Update copy count
+    copyCount++;
+    copyCountSpan.textContent = copyCount;
+
+    alert(numberText + " copied to clipboard");
   });
+});
 
-  // Call buttons
-  const callButtons = document.querySelectorAll('[id$="-call"]');
-  const historyContent = document.getElementById('history-content');
+// Call buttons
+const callButtons = [
+  "national-call",
+  "police-call",
+  "fire-call",
+  "ambulance-call",
+  "Women-child-call",
+  "helpline-service-call",
+  "electricity-call",
+  "brac-call",
+  "railway-call",
+];
 
-  callButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = btn.closest('.card');
-      const serviceName = card.querySelector('h3').textContent;
-      const serviceNum = card.querySelector('h2').textContent;
-      const time = new Date().toLocaleTimeString();
+const historyContent = document.getElementById("history-content");
 
-      const entry = document.createElement('div');
-      entry.className = 'p-2 border-b border-gray-200';
-      entry.textContent = `${serviceName}: ${serviceNum} at ${time}`;
-      historyContent.prepend(entry);
-    });
+callButtons.forEach((id) => {
+  const btn = document.getElementById(id);
+  btn.addEventListener("click", () => {
+    const card = btn.closest(".card");
+    const serviceName = card.querySelector("h3").textContent;
+    const serviceNum = card.querySelector("h2").textContent;
+    const time = new Date().toLocaleTimeString();
+
+    const entry = document.createElement("div");
+    entry.className = "p-2 border-b border-gray-200";
+    entry.textContent = `${serviceName}: ${serviceNum} at ${time}`;
+    historyContent.prepend(entry);
   });
+});
 
-  // Clear button
-  document.getElementById('clear-button').addEventListener('click', () => {
-    historyContent.innerHTML = '';
-  });
-</script>
+// Clear history
+document.getElementById("clear-button").addEventListener("click", () => {
+  historyContent.innerHTML = "";
+});

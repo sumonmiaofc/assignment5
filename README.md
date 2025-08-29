@@ -12,8 +12,12 @@ querySelectorAll: CSS selector ব্যবহার করে সব matching e
 
 <b>2. How do you create and insert a new element into the DOM?</b>
 
-<li>document.createElement() → create new element
+<ul>
+<li>document.createElement() → create new element</li>
 
-textContent / innerHTML / setAttribute → add content or attributes
+<li>textContent / innerHTML / setAttribute → add content or attributes</li>
 
-appendChild() or insertBefore() → insert into the DOM</li>
+<li>appendChild() or insertBefore() → insert into the DOM</li>
+</ul>
+
+

@@ -1,6 +1,6 @@
 Assingment 5 Question & Answer 👇
 
-<b>1. getElementById, getElementsByClassName, querySelector / querySelectorAll এর পার্থক্য</b>
+<h4>1. getElementById, getElementsByClassName, querySelector / querySelectorAll এর পার্থক্য</h4>
 
 getElementById: DOM-এর ভিতর একটি নির্দিষ্ট ID-এর উপাদান খুঁজে বের করে। একটি element রিটার্ন করে; যদি না পাওয়া যায়, তাহলে null রিটার্ন করে। খুব দ্রুত কাজ করে।
 
@@ -10,7 +10,7 @@ querySelector: CSS selector ব্যবহার করে প্রথম matc
 
 querySelectorAll: CSS selector ব্যবহার করে সব matching element রিটার্ন করে। NodeList রিটার্ন করে; যদি কিছু না পাওয়া যায়, তাহলে খালি NodeList রিটার্ন করে।
 
-<b>2. How do you create and insert a new element into the DOM?</b>
+<h4>2. How do you create and insert a new element into the DOM?</h4>
 
 <ul>
 <li>document.createElement() → create new element</li>
@@ -21,12 +21,13 @@ querySelectorAll: CSS selector ব্যবহার করে সব matching e
 </ul>
 
 
-<b>What is Event Bubbling and how does it work?</b>
+<h4>What is Event Bubbling and how does it work?</h4>
 <ul>
   <li> একটি child element (যেমন button) এ event trigger হলে প্রথমে child element এ event চলে।</li>
 
 <li> এরপর event bubble হয়ে parent element, grandparent element এবং শেষ পর্যন্ত document এ পৌঁছায়।</li>
 </ul>
+
 
 
 

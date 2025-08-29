@@ -1,4 +1,4 @@
-Assingment 5 Question & Answer 👇
+<h1>Assingment 5 Question & Answer 👇</h1>h1
 
 <h4>1. getElementById, getElementsByClassName, querySelector / querySelectorAll এর পার্থক্য</h4>
 
@@ -42,6 +42,7 @@ querySelectorAll: CSS selector ব্যবহার করে সব matching e
 
 <li>event.stopPropagation(): Event bubbling বন্ধ করে। Parent element এ event পৌঁছায় না।</li>
 </ul>
+
 
 
 

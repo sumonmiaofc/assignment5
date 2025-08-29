@@ -21,3 +21,12 @@ querySelectorAll: CSS selector ব্যবহার করে সব matching e
 </ul>
 
 
+<b>What is Event Bubbling and how does it work?</b>
+<ul>
+  <li> একটি child element (যেমন button) এ event trigger হলে প্রথমে child element এ event চলে।</li>
+
+<li> এরপর event bubble হয়ে parent element, grandparent element এবং শেষ পর্যন্ত document এ পৌঁছায়।</li>
+</ul>
+
+
+
